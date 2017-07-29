@@ -1,0 +1,21 @@
+<template name="WallLayout">
+  <br><h1 class="text-center">Wall</h1>
+  {{#if currentUser}}
+    {{> NewWallPost}}
+  {{/if}}
+  {{#each wallPosts}}
+  <div style="margin-bottom:2%" class="">
+    <h2>{{title}}</h2><br>
+    <h4>{{text}}<br>
+    <a href="/profile/{{poster_id}}">By: {{poster_id}}</a></h4>
+    <br><br>
+    {{#if sameUser}}
+      <a class="delete">Delete Post</a>
+    {{/if}}
+    {{#if userAdmin}}
+      <a class="delete">Delete Post</a>
+    {{/if}}
+    <hr>
+  </div>
+  {{/each}}
+</template>

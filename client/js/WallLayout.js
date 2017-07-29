@@ -4,6 +4,13 @@ Template.WallLayout.helpers({
   'wallPosts': function(){
     console.log(WallPosts.find({}).fetch());
     return WallPosts.find({}).fetch();
+  },
+  'sameUser': function(){
+    console.log(this);
+    return Meteor.userId()==this.poster_id;
+  },
+  'userAdmin' : function(){
+    return Meteor.user().role=='admin';
   }
 })
 Template.WallLayout.events({
@@ -13,5 +20,13 @@ Template.WallLayout.events({
       if(error)alert(error);
       else console.log(WallPosts.find({}).fetch());
     })
+  },
+  'click .delete' : function(event){
+    event.preventDefault();
+    if(confirm('Are you sure you want to delete this wall post?'))
+      Meteor.call('removeWallPost',this._id,function(error){
+        if(error)alert(error);
+        else console.log(WallPosts.find({}).fetch());
+      })
   }
 })

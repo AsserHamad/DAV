@@ -12,6 +12,7 @@ Template.register.events({
         profile: {
           firstName: firstName,
           lastName: lastName,
+          role: 'user',
           joinedAt: new Date()
         }
       },function(error){

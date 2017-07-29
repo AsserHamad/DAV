@@ -2,19 +2,21 @@
   {{#if sameUser}}
   <h1>This is you!! :D</h1>
   <form class="editProfile">
-    First Name: <input type="text" name="firstName" value="{{currentUser.profile.firstName}}"><br>
-    Last Name: <input type="text" name="lastName" value="{{currentUser.profile.lastName}}"><br>
-    Summary: <input type="text" name="summary" value="{{currentUser.profile.summary}}"><br>
-    Age: <input type="text" name="age" value="{{currentUser.profile.age}}"><br>
-    Member Since: {{currentUser.profile.joinedAt}}
-    <button type="submit">Update</button>
+    First Name: <input class="form-control" type="text" name="firstName" value="{{currentUser.profile.firstName}}"><br>
+    Last Name: <input class="form-control" type="text" name="lastName" value="{{currentUser.profile.lastName}}"><br>
+    Summary: <input class="form-control" type="text" name="summary" value="{{currentUser.profile.summary}}"><br>
+    Age: <input class="form-control" type="text" name="age" value="{{currentUser.profile.age}}"><br>
+    <button class="btn btn-primary" type="submit">Update</button>
   </form>
-    <h1>E D I T  lol</h1>
+    Member Since: {{currentUser.profile.joinedAt}}
   {{else}}
   <h1>This is NOT you >:(</h1>
     First Name: {{firstName}}<br>
     Last Name: {{lastName}}<br>
     Age: {{age}}<br>
     Member Since: {{joinedAt}}
+  {{/if}}
+  {{#if userAdmin}}
+    <h1>Admin Dashboard</h1>
   {{/if}}
 </template>

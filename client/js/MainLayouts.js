@@ -18,6 +18,9 @@ Template.profile.helpers({
 
   'sameUser': function(){
     return (FlowRouter.getParam('userId')==Meteor.userId());
+  },
+  'userAdmin': function(){
+    return Meteor.user().profile.role=='admin'
   }
 })
 
