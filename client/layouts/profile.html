@@ -6,6 +6,8 @@
     Last Name: <input class="form-control" type="text" name="lastName" value="{{currentUser.profile.lastName}}"><br>
     Summary: <input class="form-control" type="text" name="summary" value="{{currentUser.profile.summary}}"><br>
     Age: <input class="form-control" type="text" name="age" value="{{currentUser.profile.age}}"><br>
+    Email: <input type="email" name="mailingAddress" class="form-control" value="{{currentUser.profile.mailingAddress}}"><br>
+    Mobile Number: <input type="text" class="form-control" name="mobile" value="{{currentUser.profile.mobile}}">
     <button class="btn btn-primary" type="submit">Update</button>
   </form>
     Member Since: {{currentUser.profile.joinedAt}}
@@ -13,10 +15,20 @@
   <h1>This is NOT you >:(</h1>
     First Name: {{firstName}}<br>
     Last Name: {{lastName}}<br>
+    Summary: {{summary}}<br>
     Age: {{age}}<br>
+    {{#if currentUser}}
+      {{#if mailingAddress}}
+        Email: {{mailingAddress}}<br>
+      {{/if}}
+      {{#if mobile}}
+        Mobile Number: {{mobile}}<br>
+      {{/if}}
+    {{/if}}
     Member Since: {{joinedAt}}
   {{/if}}
   {{#if userAdmin}}
-    <h1>Admin Dashboard</h1>
+    <h1>Admin Dashboard</h1><br>
+
   {{/if}}
 </template>

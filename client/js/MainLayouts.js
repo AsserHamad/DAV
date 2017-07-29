@@ -15,12 +15,22 @@ Template.profile.helpers({
   'joinedAt': function(){
     return Meteor.users.findOne({_id:FlowRouter.getParam('userId')}).profile.joinedAt;
   },
-
+  'mailingAddress': function(){
+    return Meteor.users.findOne({_id:FlowRouter.getParam('userId')}).profile.mailingAddress;
+  },
+  'mobile': function(){
+    return Meteor.users.findOne({_id:FlowRouter.getParam('userId')}).profile.mobile;
+  },
   'sameUser': function(){
     return (FlowRouter.getParam('userId')==Meteor.userId());
   },
   'userAdmin': function(){
-    return Meteor.user().profile.role=='admin'
+    if(Meteor.user())
+      return Meteor.user().profile.role=='admin'
+  },
+  'myEmail': function(){
+    if(Meteor.user())
+      return Meteor.user().emails[0].address;
   }
 })
 
@@ -40,11 +50,16 @@ Template.MainLayout.events({
       let lastName = event.target.lastName.value;
       let summary = event.target.summary.value;
       let age = event.target.age.value;
+      let mobile = event.target.mobile.value;
+      let mailingAddress = event.target.mailingAddress.value;
       let data = {
         firstName: firstName,
         lastName: lastName,
+        role: Meteor.user().profile.role,
         summary: summary,
         age: age,
+        mobile: mobile,
+        mailingAddress: mailingAddress,
         joinedAt: Meteor.user().profile.joinedAt
       };
       Meteor.users.update(Meteor.userId(),{

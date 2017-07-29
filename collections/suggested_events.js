@@ -1,10 +1,10 @@
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-export const Events = new Mongo.Collection('events');
+export const SuggestedEvents = new Mongo.Collection('suggested-events');
 
 
-EventSchema = new SimpleSchema({
+SuggestedEventSchema = new SimpleSchema({
   name: {
     type: String,
     label: "Name"
@@ -17,20 +17,9 @@ EventSchema = new SimpleSchema({
     type: String,
     label: "Description"
   },
-  suggester_email: {
+  suggester_id: {
     type: String,
-    label: "Suggester's Email",
-    optional: true
-  },
-  supervisor_id: {
-    type: String,
-    label: "Supervising Admin ID",
-    autoValue: function(){
-      return this.userId;
-    },
-    autoform: {
-      type: "hidden"
-    }
+    label: "Suggester's ID"
   },
   createdAt: {
     type: Date,
@@ -44,4 +33,4 @@ EventSchema = new SimpleSchema({
   }
 });
 
-Events.attachSchema(EventSchema);
+SuggestedEvents.attachSchema(SuggestedEventSchema);

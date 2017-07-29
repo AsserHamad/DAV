@@ -1,3 +1,45 @@
 <template name="EventsAnnouncementsLayout">
   <h1>Events/Announcements</h1>
+  {{#if userAdmin}}
+  <h1>Create Event</h1>
+  <form class="createEvent">
+    <h2>Event Name</h2><input class="form-control" type="text" name="title">
+    <h2>Description</h2><input class="form-control" type="text" name="text">
+    <h2>Date</h2><input class="form-control" type="date" name="date">
+
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+
+  <h1>Post Announcement</h1>
+
+  <form class="createAnnouncement">
+    <h2>Title</h2><input class="form-control" type="text" name="title">
+    <h2>Description</h2><input class="form-control" type="text" name="text">
+
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+
+  {{else}}
+    {{#if currentUser}}
+      <h1>Suggest an Event</h1>
+      <form class="suggestEvent">
+        <h2>Event Name</h2><input class="form-control" type="text" name="title">
+        <h2>Description</h2><input class="form-control" type="text" name="text">
+        <h2>Date</h2><input class="form-control" type="date" name="date">
+
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+    {{/if}}
+  {{/if}}
+
+
+  {{#each events}}
+    <h1>Name:{{name}}</h1><br>
+    <h3>Description:{{description}}</h3><br>
+    <h3>Date:{{date}}</h3><br>
+    {{#if userAdmin}}
+      <h5><a class="delete">Delete event</a></h5>
+    {{/if}}
+    <hr>
+  {{/each}}
 </template>

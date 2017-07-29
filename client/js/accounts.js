@@ -13,6 +13,7 @@ Template.register.events({
           firstName: firstName,
           lastName: lastName,
           role: 'user',
+          mailingAddress: email,
           joinedAt: new Date()
         }
       },function(error){

@@ -1,7 +1,7 @@
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-Announcements = new Mongo.Collection('announcements');
+export const Announcements = new Mongo.Collection('announcements');
 
 AnnouncementSchema = new SimpleSchema({
   title: {
