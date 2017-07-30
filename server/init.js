@@ -3,6 +3,7 @@ import { WallPosts } from '../collections/wall_posts.js'
 import { Events } from '../collections/events.js'
 import { SuggestedEvents } from '../collections/suggested_events.js'
 import { Announcements } from '../collections/announcements.js'
+import { CatalogueInfo } from '../collections/catalogue-images.js'
 
 
 Meteor.startup(() => {
@@ -57,6 +58,12 @@ Meteor.startup(() => {
     removeWallPost(_id){
       WallPosts.remove({
         _id: _id
+      })
+    },
+    catalogueInfo(file){
+      CatalogueInfo.insert({
+        poster_id: Meteor.userId(),
+        info: file
       })
     }
   })

@@ -35,3 +35,4 @@ gwendall:auth-client-callbacks
 aldeed:collection2-core@2.0.0
 meteor
 autopublish
+ostrio:files
