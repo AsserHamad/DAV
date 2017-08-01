@@ -22,6 +22,13 @@ EventSchema = new SimpleSchema({
     label: "Suggester's Email",
     optional: true
   },
+  attendees: {
+    type: Array,
+    label: "Attendees"
+  },
+  'attendees.$':{
+    type: String
+  },
   supervisor_id: {
     type: String,
     label: "Supervising Admin ID",

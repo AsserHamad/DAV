@@ -22,8 +22,17 @@
     <h2>
       <h5>
         {{#if currentUser}}
-          <p><h4><a href="/profile/{{currentUser._id}}">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</a></h4></p>
+        <div class="profile_pic">
+          <a href="/profile/{{currentUser._id}}">
+          {{#if currentUser.profile.pic}}
+            <img src="{{fileURL currentUser.profile.pic}}" style="width:7rem" alt="">
+          {{else}}
+            <img src="/assets/img/placeholder.png" alt="Placeholder profile pic" style="width:7rem">
+          {{/if}}
+          <p><h4>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</h4></p>
+          </a>
           <li><a href="#" class="logout">Logout</a></li>
+        </div>
         {{else}}
           <a href="/register">Register</a><br>
           <a href="/login">Login</a><br>

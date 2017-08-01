@@ -40,12 +40,24 @@
 
 
   {{#each events}}
-    <h1>Name:{{name}}</h1><br>
-    <h3>Description:{{description}}</h3><br>
+  <div class="center-block text-center" style="border: 1px solid rgba(0,0,0,0.6)">
+    <h1>{{name}}</h1><br>
+    <h3>{{description}}</h3><br>
     <h3>Date:{{date}}</h3><br>
+    <p>Look who's attending:</p>
+      {{#each attendees}}
+        <h2>{{showName this}}</h2><br>
+      {{/each}}
+      {{#if currentUser}}
+        <h3><a class="attend atend_style">Attend this event!</a></h3><br>
+      {{else}}
+        <h3><a class="attend_style" data-toggle="modal" href="#attend_modal">Attend this event!</a></h3><br>
+      {{/if}}
     {{#if userAdmin}}
-      <h5><a class="delete">Delete event</a></h5>
+      <h3><a class="delete">Delete event</a></h3>
     {{/if}}
     <hr>
+  </div>
   {{/each}}
+  {{> attend_event}}
 </template>

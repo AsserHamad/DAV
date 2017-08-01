@@ -2,10 +2,10 @@
   <h1>Catalogue</h1>
   <h2>Upload a photo to the catalogue!</h2>
   {{> uploadForm}}
-  {{#each pic in showPics}}
+  {{#each showPics}}
     <div class="text-center center-block col-xs-4">
-      <p><h2>{{pic.info.title}}</h2></p>
-      <img style="width:200px" src="{{fileURL pic.info}}" alt="{{pic.info.name}}">
+      <p><h2>{{info.title}}</h2></p>
+      <img style="width:200px" src="{{fileURL info}}" alt="{{info.name}}">
       <a class="remove">Remove this pic</a>
     </div>
   {{/each}}

@@ -9,6 +9,16 @@ Template.EventsAnnouncementsLayout.helpers({
   },
   'events':function(){
     return Events.find({}).fetch();
+  },
+  'getAttendees':function(){
+    return Meteor.users.findOne({_id:this.attendees});
+  },
+  'showName': function(attendee){
+    console.log("Hello from showName!");
+    console.log(attendee);
+    let x = Meteor.users.findOne({_id:attendee}).profile;
+    return x.firstName+" "+x.lastName;
+
   }
 });
 Template.EventsAnnouncementsLayout.events({
@@ -44,6 +54,16 @@ Template.EventsAnnouncementsLayout.events({
   },
   'click .delete': function(event){
     event.preventDefault();
+    console.log(this._id);
     if(confirm("Delete this event"))Meteor.call('deleteEvent',this._id);
+  },
+  'click .attend': function(event){
+    event.preventDefault();
+    console.log(Events.find({_id: this._id}).fetch());
+    Meteor.call('addAttendee',this,function(error){
+      if(error)alert(error);
+      else
+      console.log(Events.find({}).fetch());
+    });
   }
 })

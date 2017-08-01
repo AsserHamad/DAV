@@ -1,4 +1,6 @@
 Meteor.subscribe('userData');
+import { ProfilePics } from '../../collections/profilepics.js'
+
 Template.register.events({
   'submit form': function(event){
       event.preventDefault();

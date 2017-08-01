@@ -61,15 +61,11 @@ Template.CatalogueLayout.events({
     event.preventDefault();
     console.log(this.info);
     if(confirm("Are you sure you want to remove this post?")){
-      CatalogueImages.remove({_id:this.info._id},function(error){
-        if(error)alert(error);
-        else {
-          CatalogueInfo.remove({_id: this._id},function(error){
-            if(error)alert(error);
-            else console.log(CatalogueInfo.find());
-          })
-        }
+      Meteor.call('removeCataloguePic',this,function(error){
+        if(error)console.log(error);
+        else alert('Succesfully removed object woohoo!')
       })
+
     }
   }
 })
