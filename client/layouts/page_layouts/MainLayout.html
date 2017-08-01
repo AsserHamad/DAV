@@ -14,36 +14,40 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- CSS Imports -->
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="">
     <main>
-    <h2>
-      <h5>
+      <nav class="navbar navbar-fixed-top">
+        <a class="navbar_logo col-xs-2 text-center" href="/">DAAD</a>
+      <a class="navbar_elements col-xs-1" href="/events-announcements">Events</a>
+      <a class="navbar_elements col-xs-1" href="/dav-wall">Wall</a>
+      <a class="navbar_elements col-xs-1" href="/catalogue">Catalogue</a>
+      <div class="col-xs-5"></div>
+        <div class="profile col-xs-2">
         {{#if currentUser}}
         <div class="profile_pic">
           <a href="/profile/{{currentUser._id}}">
           {{#if currentUser.profile.pic}}
-            <img src="{{fileURL currentUser.profile.pic}}" style="width:7rem" alt="">
+            <img class="profile_img" src="{{fileURL currentUser.profile.pic}}" alt="">
           {{else}}
-            <img src="/assets/img/placeholder.png" alt="Placeholder profile pic" style="width:7rem">
+            <img class="profile_img center-block" src="/assets/img/placeholder.png" alt="Placeholder profile pic">
           {{/if}}
           <p><h4>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</h4></p>
           </a>
-          <li><a href="#" class="logout">Logout</a></li>
+          <li><a href="#" class="text-center center-block logout">Logout</a></li>
         </div>
         {{else}}
-          <a href="/register">Register</a><br>
-          <a href="/login">Login</a><br>
+          <a class="col-xs-6" href="/register">Register</a>
+          <a class="col-xs-6" href="/login">Login</a>
         {{/if}}
-      </h5>
-      <hr>
-      <a class="col-xs-3 text-center" href="/">Home</a>
-      <a class="col-xs-3 text-center" href="/events-announcements">Events and Announcements</a>
-      <a class="col-xs-3 text-center" href="/catalogue">Catalogue</a>
-      <a class="col-xs-3 text-center" href="/dav-wall">DAV Wall</a>
-    </h2>
+      </div>
+      
+    
+    
+    </nav>
       {{> Template.dynamic template=main}}
     </main>
   </div>

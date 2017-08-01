@@ -1,7 +1,37 @@
 .approve_box{
 
 }
+body{
+	width:100%;
+	max-width:100%;
+	min-width:100%;
+}
 a, a:hover, a:focus, a:visited{
   text-decoration:none;
   cursor:pointer;
+}
+
+.navbar a{
+	z-index:999;
+	color:white;
+}
+.navbar_elements{
+	padding-top:1.5rem;
+	font-size:160%;
+}
+.navbar_logo{
+	font-size:300%;
+
+}
+.profile{
+	margin-top:1%;
+	font-size:160%;
+}
+.logout{
+	font-size:70%;
+	margin-top:-20%;
+}
+.profile_img{
+	width:4rem;
+	border-radius:5rem;
 }
