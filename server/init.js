@@ -16,6 +16,9 @@ Meteor.startup(() => {
       firstName: 'Admin',
       lastName: 'Abo el Adamen',
       mailingAddress: 'admin@admin.com',
+      followers: [],
+      following: [],
+      notifications: {},
       joinedAt: new Date()
     },function(error){
       console.log(error);
