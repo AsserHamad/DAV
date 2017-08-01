@@ -1,6 +1,9 @@
 .approve_box{
 
 }
+body{
+  background-color:blue;
+}
 a, a:hover, a:focus, a:visited{
   text-decoration:none;
   cursor:pointer;

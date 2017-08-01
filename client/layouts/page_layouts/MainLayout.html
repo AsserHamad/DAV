@@ -15,6 +15,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- CSS Imports -->
     <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- Script Imports -->
+    <script type="text/javascript" src="/js/Main.js">
+
+    </script>
   </head>
   <body>
     <div class="container-fluid">
@@ -39,10 +44,12 @@
         {{/if}}
       </h5>
       <hr>
-      <a class="col-xs-3 text-center" href="/">Home</a>
-      <a class="col-xs-3 text-center" href="/events-announcements">Events and Announcements</a>
-      <a class="col-xs-3 text-center" href="/catalogue">Catalogue</a>
-      <a class="col-xs-3 text-center" href="/dav-wall">DAV Wall</a>
+      <div class="">
+        <a class="col-xs-3 text-center navbar" href="/">Home</a>
+        <a class="col-xs-3 text-center navbar" href="/events-announcements">Events and Announcements</a>
+        <a class="col-xs-3 text-center navbar" href="/catalogue">Catalogue</a>
+        <a class="col-xs-3 text-center navbar" href="/dav-wall">DAV Wall</a>
+      </div>
     </h2>
       {{> Template.dynamic template=main}}
     </main>

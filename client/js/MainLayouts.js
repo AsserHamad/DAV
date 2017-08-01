@@ -3,6 +3,7 @@ import { ProfilePics } from '../../collections/profilepics.js'
 Template.MainLayout.onCreated(function () {
   document.title = "DAAD Whatever";
   this.currentUpload = new ReactiveVar(false);
+  this.current_location = new ReactiveVar('/');
 });
 
 Template.profile.helpers({
