@@ -2,30 +2,41 @@
 
 }
 body{
-<<<<<<< HEAD
-  background-color:blue;
-=======
 	width:100%;
 	max-width:100%;
 	min-width:100%;
->>>>>>> 2a50698ef87a2722cfb56d3e1c3b1596e3f15ae9
 }
 a, a:hover, a:focus, a:visited{
   text-decoration:none;
   cursor:pointer;
 }
-
+.navbar{
+  font-family: Lato;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition-duration:0.3s;
+}
+.navbar:hover{
+  background-color:rgba(255,255,255,0.2)
+}
 .navbar a{
+  /*padding:2% 0%;*/
 	z-index:999;
 	color:white;
-}
+  transition-duration:0.3s;
+  }
+  .navbar a:hover{
+    text-shadow: 0px 0px 5px white;
+  }
 .navbar_elements{
 	padding-top:1.5rem;
-	font-size:160%;
+	font-size:180%;
 }
 .navbar_logo{
-	font-size:300%;
-
+  padding: 0% 0%;
+	font-size:400%;
+  /*margin-top:-0.5%;*/
+  font-family: Noto Sans;
+  /*text-shadow: 0px 0px 10px #00F;*/
 }
 .profile{
 	margin-top:1%;

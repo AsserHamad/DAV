@@ -1,17 +1,11 @@
 $("document").ready(function(){
-  console.log("I'm here")
-  $("a").click(function(){checkLocation(this.href)})
+  var $win = $(window);
+  var $nav = $('.navbar');
+  $win.on('scroll', function(){
+    var scr = $win.scrollTop();
+      console.log($nav.css('background-color'));
+      var value = scr/2000;
+      if(value>0.3)value=0.3;
+       $nav.css("background-color",'rgba(255,255,255,'+value+')');
+});
 })
-
-function checkLocation(){
-  if(window.location.pathname=='/'){
-
-    $('.navbar').addClass('navbar_other');
-    $('.navbar_other').removeClass('navbar');
-    console.log('Hi there');
-  }else{
-    $('.navbar_other').addClass('navbar');
-    $('.navbar').removeClass('navbar_other');
-    console.log('Byeee');
-  };
-}

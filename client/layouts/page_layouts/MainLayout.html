@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>DAV Alumni Whatever</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato|Spectral" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Spectral|Raleway|Noto+Sans" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -17,16 +17,20 @@
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/home.css">
+
+    <!-- JS Imports -->
+    <script type="text/javascript" src="/js/Main.js">
+    </script>
   </head>
   <body>
     <div class="">
     <main>
       <nav class="navbar navbar-fixed-top">
         <a class="navbar_logo col-xs-2 text-center" href="/">DAAD</a>
-      <a class="navbar_elements col-xs-1" href="/events-announcements">Events</a>
-      <a class="navbar_elements col-xs-1" href="/dav-wall">Wall</a>
-      <a class="navbar_elements col-xs-1" href="/catalogue">Catalogue</a>
-      <div class="col-xs-5"></div>
+        <a class="navbar_elements col-xs-1" href="/events-announcements">Events</a>
+        <a class="navbar_elements col-xs-1" href="/dav-wall">Wall</a>
+        <a class="navbar_elements col-xs-1" href="/catalogue">Catalogue</a>
+        <div class="col-xs-5"></div>
         <div class="profile col-xs-2">
         {{#if currentUser}}
         <div class="profile_pic">
@@ -36,7 +40,7 @@
           {{else}}
             <img class="profile_img center-block" src="/assets/img/placeholder.png" alt="Placeholder profile pic">
           {{/if}}
-          <p><h4>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</h4></p>
+          <p>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</p>
           </a>
           <li><a href="#" class="text-center center-block logout">Logout</a></li>
         </div>
