@@ -1,5 +1,5 @@
 <template name="EventsAnnouncementsLayout">
-  <h1>Events/Announcements</h1>
+<!--   <h1>Events/Announcements</h1> -->
   {{#if userAdmin}}
   <h1>Create Event</h1>
   <form class="createEvent">
@@ -40,24 +40,29 @@
 
 
   {{#each events}}
-  <div class="center-block text-center" style="border: 1px solid rgba(0,0,0,0.6)">
+  <div class="col-xs-3 event-content ">
+  <div ></div>
+   
+  <div class=" event-box-text" >
+     <div class="Date-style">{{date}}</div><br>
     <h1>{{name}}</h1><br>
     <h3>{{description}}</h3><br>
-    <h3>Date:{{date}}</h3><br>
-    <p>Look who's attending:</p>
+   
+    <p class="Attendees-style">Attendees</p>
       {{#each attendees}}
         <h2>{{showName this}}</h2><br>
       {{/each}}
       {{#if currentUser}}
-        <h3><a class="attend atend_style">Attend this event!</a></h3><br>
+        <h3><a >Attend this event!</a></h3><br>
       {{else}}
-        <h3><a class="attend_style" data-toggle="modal" href="#attend_modal">Attend this event!</a></h3><br>
+        <h3><a class="Attend-style " data-toggle="modal" href="#attend_modal">Attend</a></h3><br>
       {{/if}}
     {{#if userAdmin}}
       <h3><a class="delete">Delete event</a></h3>
     {{/if}}
-    <hr>
+  </div>
   </div>
   {{/each}}
   {{> attend_event}}
 </template>
+  
