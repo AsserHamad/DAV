@@ -1,16 +1,51 @@
-#home_img{
-	width: 100%;
+.home_img{
+	background-image:url("/assets/img/home_img.jpeg");
+	/*background-color:red;*/
+  min-height: 65rem;
+	min-width:100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home_img_2{
+	background-image:url("/assets/img/berlin.jpg");
+	/*background-color:red;*/
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .message-block{
-     background: rgba(255,255,255,0.80);
-      box-shadow: 2px 2px 24px 0px rgba(0,0,0,0.10);
+     background: rgba(29,39,49,0.7);
+      box-shadow: 2px 2px 24px 0px rgba(29,39,49,0.7);
       padding: 30px 40px 55px 60px;
       position: absolute;
-      bottom: 0;
-      margin-bottom: 90px;
+			top:30%;
+      margin-top: 2%;
       max-width: 48%;
-      }
-.bg{
-      background-image: linear-gradient(-180deg,rgba(212, 116, 48, 0.59) 0,rgba(25, 17, 39, 0) 71%);
-  }
-  
+			color:white;
+			z-index:2;
+}
+.title_text{
+	font-size:300%;
+	font-family:Raleway;
+}
+.horizontal_line {
+  display: block;
+  height: 2px;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#328CC1), to(rgba(29,39,49,0.7)));
+}
+#title_p{
+	font-family:Raleway;
+	font-size:120%;
+	margin-top:4%;
+}
+#slide_1{
+	background-color: #1D2731;
+	/*height:100px;*/
+	font-family:Raleway;
+	color:white;
+	padding:3%;
+}

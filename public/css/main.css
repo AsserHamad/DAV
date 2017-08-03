@@ -1,10 +1,11 @@
-.approve_box{
-
+html{
+	background-color:#1D2731
 }
 body{
 	width:100%;
 	max-width:100%;
 	min-width:100%;
+  z-index:6;
 }
 a, a:hover, a:focus, a:visited{
   text-decoration:none;
@@ -15,13 +16,9 @@ a, a:hover, a:focus, a:visited{
   border-bottom: 1px solid rgba(255,255,255,0.3);
   transition-duration:0.3s;
 }
-.navbar:hover{
-  background-color:rgba(255,255,255,0.2)
-}
 .navbar a{
   /*padding:2% 0%;*/
 	z-index:999;
-	color:white;
   transition-duration:0.3s;
   }
   .navbar a:hover{
@@ -30,10 +27,13 @@ a, a:hover, a:focus, a:visited{
 .navbar_elements{
 	padding-top:1.5rem;
 	font-size:180%;
+	color:white;
+	text-shadow:0px 0px 10px rgba(0,0,0,0.6)
 }
 .navbar_logo{
   padding: 0% 0%;
 	font-size:400%;
+	color:white;
   /*margin-top:-0.5%;*/
   font-family: Noto Sans;
   /*text-shadow: 0px 0px 10px #00F;*/
