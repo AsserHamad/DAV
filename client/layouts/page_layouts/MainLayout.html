@@ -17,10 +17,10 @@
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/home.css">
-
     <!-- JS Imports -->
     <script type="text/javascript" src="/js/Main.js">
     </script>
+     <link rel="stylesheet" type="text/css" href="/css/events.css">
   </head>
   <body>
     <div class="">
@@ -42,11 +42,11 @@
           {{/if}}
           <p>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</p>
           </a>
-          <li><a href="#" class="text-center center-block logout">Logout</a></li>
+          <a href="#" class="text-center center-block logout">Logout</a></li>
         </div>
         {{else}}
           <b><a class="col-xs-6" href="/register" style="color:#1D2731">Register</a>
-          <a class="col-xs-6" href="/login" style="color:#1D2731">Login</a></b> 
+          <a class="col-xs-6" href="/login" style="color:#1D2731">Login</a></b>
         {{/if}}
 
       </div>
