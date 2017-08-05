@@ -9,7 +9,7 @@
   <div style="margin-bottom:2%" class="wall_post">
     <h2 class="text-center"><b>{{title}}</b></h2><br>
     <div><em>{{text}}</em></div>
-    -<a href="/profile/{{poster_id}}">{{getName poster_id}}</a>
+    -<a href="/profile/{{poster_id}}">{{getName poster_id}}</a> on {{posted_at.getDay}}/{{posted_at.getMonth}}/{{posted_at.getFullYear}}
     <br><br>
     {{#if sameUser}}
       <button class="delete">Delete Post</button>
