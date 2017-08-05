@@ -1,4 +1,5 @@
 <template name="EventsAnnouncementsLayout">
+<div class="events_div">
 <!--   <h1>Events/Announcements</h1> -->
   {{#if userAdmin}}
   <h1>Create Event</h1>
@@ -40,14 +41,14 @@
 
 
   {{#each events}}
-  <div class="col-xs-3 event-content ">
-  <div ></div>
-   
+  <div class="col-xs-3 event-content text-center">
+  <img src="/assets/img/event_texture.jpg" class="cover_img" alt="Ta5ayal 7aga 7elwa">
+  <b><p class="event_title">{{name}}</p></b>
+
   <div class=" event-box-text" >
-     <div class="Date-style">{{date}}</div><br>
-    <h1>{{name}}</h1><br>
+    <div class="Date-style">{{date.getDay}}/{{date.getMonth}}/{{date.getFullYear}}</div><br>
     <h3>{{description}}</h3><br>
-   
+
     <p class="Attendees-style">Attendees</p>
       {{#each attendees}}
         <h2>{{showName this}}</h2><br>
@@ -64,5 +65,5 @@
   </div>
   {{/each}}
   {{> attend_event}}
+</div>
 </template>
-  

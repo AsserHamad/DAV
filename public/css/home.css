@@ -1,7 +1,7 @@
 .home_img{
 	background-image:url("/assets/img/home_img.jpeg");
 	/*background-color:red;*/
-  min-height: 65rem;
+  min-height: 85rem;
 	min-width:100%;
   background-attachment: fixed;
   background-position: center;
