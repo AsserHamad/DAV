@@ -1,12 +1,17 @@
 html{
-	background-color:#1D2731
+	background-color:#1D2731;
+	font-family:Raleway;
 }
 body{
+	background-color:transparent;
+	color:white;
 	width:100%;
 	max-width:100%;
 	min-width:100%;
   z-index:6;
+	font-family:Raleway;
 }
+
 a, a:hover, a:focus, a:visited{
   text-decoration:none;
   cursor:pointer;
