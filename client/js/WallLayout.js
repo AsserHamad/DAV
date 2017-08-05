@@ -11,6 +11,11 @@ Template.WallLayout.helpers({
   },
   'userAdmin' : function(){
     return Meteor.user().role=='admin';
+  },
+  'getName': function(id){
+    console.log(id);
+    let x = Meteor.users.findOne({_id:id}).profile;
+    return x.firstName+" "+x.lastName;
   }
 })
 Template.WallLayout.events({

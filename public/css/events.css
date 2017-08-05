@@ -30,13 +30,6 @@
 	/*left:20%;*/
 	color:white;
 }
-.event-box-bg{
-	width:100%;
-	height: 50px;
-	box-shadow:  5px 5px 5px #888888;
-	border-radius: 30px 30px 5px 5px;
-	background-color: #0b3c5d;
-}
 
 .Attend-style{
 	float: right;

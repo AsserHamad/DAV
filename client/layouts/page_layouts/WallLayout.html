@@ -1,14 +1,15 @@
 <template name="WallLayout">
   <link rel="stylesheet" href="/css/wall.css">
   <p class="text-center title">DAV Wall</p>
+  <p class="text-center subtitle"><em>Posts by the alumni to do whatever lorem ipsum man</em></p>
   {{#if currentUser}}
     {{> NewWallPost}}
   {{/if}}
   {{#each wallPosts}}
   <div style="margin-bottom:2%" class="wall_post">
-    <h2>{{title}}</h2><br>
-    <h4>{{text}}<br>
-    <a href="/profile/{{poster_id}}">By: {{poster_id}}</a></h4>
+    <h2 class="text-center"><b>{{title}}</b></h2><br>
+    <div><em>{{text}}</em></div>
+    <a href="/profile/{{poster_id}}">By: {{getName poster_id}}</a>
     <br><br>
     {{#if sameUser}}
       <a class="delete">Delete Post</a>
@@ -16,7 +17,6 @@
     {{#if userAdmin}}
       <a class="delete">Delete Post</a>
     {{/if}}
-    <hr>
   </div>
   {{/each}}
 </template>
