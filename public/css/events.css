@@ -1,10 +1,17 @@
 .events_div{
 	margin-top:5%;
 }
+.event-box-text{
+	margin-bottom: 50%;
+	font-size:130%;
+	margin-right: 5%;
+	margin-left: 5%;
+
+}
 .event-content{
 	padding:0%;
 	width: 30%;
-    height: 500px;
+    min-height: 550px;
     background-color: white;
     border-radius: 5px;
 	box-shadow:  10px 10px 20px rgba(0,0,0,0.6);
@@ -15,12 +22,13 @@
 
 }
 .cover_img{
+	background: linear-gradient(to top, #1D2731 0%, #d9b310 100%);
 	width:100%;
-	height:30%;
+	/*height:150px;*/
 	border-radius: 5px 5px 0px 0px;
 }
 .event_title{
-	position:absolute;
+	/*position:absolute;*/
 	top:7%;
 	font-size:350%;
 	text-align:center;
@@ -30,31 +38,51 @@
 	/*left:20%;*/
 	color:white;
 }
-.event-box-bg{
-	width:100%;
-	height: 50px;
-	box-shadow:  5px 5px 5px #888888;
-	border-radius: 30px 30px 5px 5px;
-	background-color: #0b3c5d;
-}
 
 .Attend-style{
-	float: right;
-	margin-right: 20px;
-	margin-top: 200px;
-	color:#d9b310;
-
+	position:absolute;
+	top:85%;
+	width:90%;
+	height:10%;
+	left:5%;
+	color:#328CC1;
+	text-decoration: bold;
+	font-size: 200%;
+	background-color:white;
+	border-radius:5px;
+	border: 2px solid #328CC1;
+	transition-duration:0.2s;
+}
+.Attend-style:hover{
+	color:white;
+	background-color:#328CC1;
 }
 
 
 .Attendees-style{
-	margin-top: 70px;
-	float: left;
-	margin-left: 20px;
-	color:#d9b310;
+	position:absolute;
+	top:73%;
+	width:90%;
+	height:10%;
+	left:5%;
+	color:#1D2731;
+	text-decoration: bold;
+	font-size: 200%;
+	background-color:white;
+	border-radius:5px;
+	border: 2px solid #1D2731;
+	transition-duration:0.2s;
 }
+.Attendees-style:hover{
+	color:white;
+	background-color:#1D2731;
+}
+
 
 
 .Date-style{
   color:#d9b310;
+  font-size:170%;
+  margin-top: 2%;
+  text-decoration: bold;
 }
