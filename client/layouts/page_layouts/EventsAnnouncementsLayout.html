@@ -42,21 +42,28 @@
 
   {{#each events}}
   <div class="col-xs-3 event-content text-center">
-  <img src="/assets/img/event_texture.jpg" class="cover_img" alt="Ta5ayal 7aga 7elwa">
-  <b><p class="event_title">{{name}}</p></b>
+ <!--  <img src="/assets/img/event_texture.jpg" class="cover_img" alt="Ta5ayal 7aga 7elwa"> -->
+ <div class="cover_img">
+<b><p class="event_title">{{name}} bkaghdghefhh</p></b>
+ </div>
+  
 
-  <div class=" event-box-text" >
+  <div >
     <div class="Date-style">{{date.getDay}}/{{date.getMonth}}/{{date.getFullYear}}</div><br>
-    <h3>{{description}}</h3><br>
-
-    <p class="Attendees-style">Attendees</p>
+    <h3 class="text-center event-box-text">{{description}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. lorem</h3><br>
+   <button class="Attendees-style text-center" data-toggle="modal" href="#attend_modal">See who's going</button> 
       {{#each attendees}}
         <h2>{{showName this}}</h2><br>
       {{/each}}
       {{#if currentUser}}
-        <h3><a >Attend this event!</a></h3><br>
+      <a>Attend</a><br>
       {{else}}
-        <h3><a class="Attend-style " data-toggle="modal" href="#attend_modal">Attend</a></h3><br>
+      <button class="Attend-style text-center" data-toggle="modal" href="#attend_modal">Attend</button>  
       {{/if}}
     {{#if userAdmin}}
       <h3><a class="delete">Delete event</a></h3>
