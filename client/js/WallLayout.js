@@ -3,7 +3,7 @@ import { WallPosts } from '../../collections/wall_posts.js'
 Template.WallLayout.helpers({
   'wallPosts': function(){
     console.log(WallPosts.find({}).fetch());
-    return WallPosts.find({}).fetch();
+    return WallPosts.find({}, {sort: {posted_at:-1}}).fetch();
   },
   'sameUser': function(){
     console.log(this);

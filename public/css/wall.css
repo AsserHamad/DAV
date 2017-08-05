@@ -34,3 +34,28 @@
 .wall_post:hover{
   background-color:rgba(0,0,0,0.6);
 }
+.submit_post{
+  margin-top:1%;
+  width:30%;
+  font-size:250%;
+  background-color: rgba(0,0,0,0.6);
+  border: 2px solid white;
+  border-radius:10px;
+  transition-duration:0.3s;
+}
+.submit_post:hover{
+  background-color:white;
+  color:#1D2731;
+  transform: translateY(-2px);
+}
+.delete{
+  color:rgb(255,40,0);
+  background-color:transparent;
+  border-radius:15px;
+  border: 1px solid rgb(255,40,0);
+  transition-duration:0.2s;
+}
+.delete:hover{
+  color:white;
+  background-color:rgb(255,40,0);
+}

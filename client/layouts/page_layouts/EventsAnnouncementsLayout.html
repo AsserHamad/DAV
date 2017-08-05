@@ -44,9 +44,9 @@
   <div class="col-xs-3 event-content text-center">
  <!--  <img src="/assets/img/event_texture.jpg" class="cover_img" alt="Ta5ayal 7aga 7elwa"> -->
  <div class="cover_img">
-<b><p class="event_title">{{name}} bkaghdghefhh</p></b>
+<b><p class="event_title">{{name}}</p></b>
  </div>
-  
+
 
   <div >
     <div class="Date-style">{{date.getDay}}/{{date.getMonth}}/{{date.getFullYear}}</div><br>
@@ -56,14 +56,14 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum. lorem</h3><br>
-   <button class="Attendees-style text-center" data-toggle="modal" href="#attend_modal">See who's going</button> 
+   <button class="Attendees-style text-center" data-toggle="modal" href="#attend_modal">See who's going</button>
       {{#each attendees}}
         <h2>{{showName this}}</h2><br>
       {{/each}}
       {{#if currentUser}}
       <a>Attend</a><br>
       {{else}}
-      <button class="Attend-style text-center" data-toggle="modal" href="#attend_modal">Attend</button>  
+      <button class="Attend-style text-center" data-toggle="modal" href="#attend_modal">Attend</button>
       {{/if}}
     {{#if userAdmin}}
       <h3><a class="delete">Delete event</a></h3>

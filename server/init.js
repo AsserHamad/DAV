@@ -31,6 +31,7 @@ Meteor.startup(() => {
       WallPosts.insert({
         title: title,
         text: text,
+        posted_at: new Date(),
         createdBy: Meteor.userId()
       })
     },

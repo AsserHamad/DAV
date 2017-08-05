@@ -9,13 +9,13 @@
   <div style="margin-bottom:2%" class="wall_post">
     <h2 class="text-center"><b>{{title}}</b></h2><br>
     <div><em>{{text}}</em></div>
-    <a href="/profile/{{poster_id}}">By: {{getName poster_id}}</a>
+    -<a href="/profile/{{poster_id}}">{{getName poster_id}}</a>
     <br><br>
     {{#if sameUser}}
-      <a class="delete">Delete Post</a>
+      <button class="delete">Delete Post</button>
     {{/if}}
     {{#if userAdmin}}
-      <a class="delete">Delete Post</a>
+      <button class="delete">Delete Post</button>
     {{/if}}
   </div>
   {{/each}}

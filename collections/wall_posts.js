@@ -12,6 +12,10 @@ WallPostSchema = new SimpleSchema({
     type: String,
     label: "Main Text"
   },
+  posted_at:{
+    type: Date(),
+    label: "Time of posting"
+  },
   poster_id: {
     type: String,
     label: "The poster's ID",
