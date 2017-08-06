@@ -2,21 +2,26 @@
 <div class="events_div">
 <!--   <h1>Events/Announcements</h1> -->
   {{#if userAdmin}}
-  <h1>Create Event</h1>
-  <form class="createEvent">
-    <h2>Event Name</h2><input class="form-control" type="text" name="title">
-    <h2>Description</h2><input class="form-control" type="text" name="text">
-    <h2>Date</h2><input class="form-control" type="date" name="date">
 
-    <button class="btn btn-success" type="submit">Submit</button>
-  </form>
+<div class="col-xs-3 event-content text-center" style="box-shadow:0px 0px 20px #328CC1;">
+  <div class="cover_img" style="background: linear-gradient(to top, white 0%, #328CC1 100%);">
+    <b><p class="event_title">Create Event</p></b>
+  </div>
+  <div style="padding-left:4%;padding-right:4%;" class="">
+    <form class="createEvent">
+      <h2>Event Name</h2><input class="form-control" type="text" name="title">
+      <h2>Description</h2><textarea class="form-control" name="text"></textarea>
+      <h2>Date</h2><input class="form-control" type="date" name="date">
 
-<div class="approve_box">
+      <button class="admin_submit" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- <div class="approve_box">
   <h1>Approve Suggested Events</h1>
 
 </div>
-
-
   <h1>Post Announcement</h1>
 
   <form class="createAnnouncement">
@@ -24,21 +29,27 @@
     <h2>Description</h2><input class="form-control" type="text" name="text">
 
     <button class="btn btn-success" type="submit">Submit</button>
-  </form>
+  </form> -->
 
   {{else}}
     {{#if currentUser}}
-      <h1>Suggest an Event</h1>
-      <form class="suggestEvent">
-        <h2>Event Name</h2><input class="form-control" type="text" name="title">
-        <h2>Description</h2><input class="form-control" type="text" name="text">
-        <h2>Date</h2><input class="form-control" type="date" name="date">
+    <div class="col-xs-3 event-content text-center" style="box-shadow:0px 0px 20px #328CC1;">
+      <div class="cover_img" style="background: linear-gradient(to top, white 0%, #328CC1 60%);">
+        <b><p class="event_title">Suggest an Event</p></b>
+      </div>
+      <div style="padding-left:4%;padding-right:4%;" class="">
+        <form class="suggestEvent">
+          <h2>Event Name</h2><input class="form-control" type="text" name="title">
+          <h2>Description</h2><input class="form-control" type="text" name="text">
+          <h2>Date</h2><input class="form-control" type="date" name="date">
 
-        <button class="btn btn-success" type="submit">Submit</button>
-      </form>
+          <button class="admin_submit" type="submit">Submit</button>
+        </form>
+
+      </div>
+    </div>
     {{/if}}
   {{/if}}
-
 
   {{#each events}}
   <div class="col-xs-3 event-content text-center">
@@ -46,31 +57,49 @@
  <div class="cover_img">
 <b><p class="event_title">{{name}}</p></b>
  </div>
-
-
   <div >
-    <div class="Date-style">{{date.getDay}}/{{date.getMonth}}/{{date.getFullYear}}</div><br>
+    <div class="Date-style"><b>{{date.getDay}}/{{date.getMonth}}/{{date.getFullYear}}</b></div><br>
     <h3 class="text-center event-box-text">{{description}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum. lorem</h3><br>
-   <button class="Attendees-style text-center" data-toggle="modal" href="#attend_modal">See who's going</button>
-      {{#each attendees}}
-        <h2>{{showName this}}</h2><br>
-      {{/each}}
+   <button class="Attendees-style text-center" data-toggle="modal" href="#attendees_modal_{{_id}}">See who's going</button>
+   <!-- Attendees Modal -->
+   <div id="attendees_modal_{{_id}}" class="modal fade shake page" role="dialog">
+     <div class="modal-dialog">
+     <div class="modal-content login_modal">
+
+       <div class="modal-body">
+         {{#if attendees}}
+         {{#each attendees}}
+         {{#if attendee_pp}}
+           <img class="profile_img" src="{{fileURL attendee_pp}}" alt="">
+         {{else}}
+           <img class="profile_img center-block" src="/assets/img/placeholder.png" alt="Placeholder profile pic">
+         {{/if}}
+         <a class="attendee_name close-modal" href="/profile/{{this}}">{{showName this}}</a><br>
+         {{/each}}
+         {{else}}
+          <h1>Nobody's here bAHAHAH</h1>
+         {{/if}}
+       </div>
+     </div>
+    </div>
+   </div>
       {{#if currentUser}}
-      <a>Attend</a><br>
+      <a class="attend">Attend</a><br>
       {{else}}
       <button class="Attend-style text-center" data-toggle="modal" href="#attend_modal">Attend</button>
       {{/if}}
+      {{> attend_event}}
+      {{> attendees}}
     {{#if userAdmin}}
       <h3><a class="delete">Delete event</a></h3>
     {{/if}}
   </div>
   </div>
   {{/each}}
-  {{> attend_event}}
 </div>
 </template>

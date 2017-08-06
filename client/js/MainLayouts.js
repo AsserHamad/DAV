@@ -62,7 +62,7 @@ Template.MainLayout.events({
       var pic;
 
       //Uploading Profile Pic
-      if(event.target.fileInput){
+      if(event.target.fileInput.file){
         const upload = ProfilePics.insert({
           file: event.target.fileInput.files[0],
           streams: 'dynamic',

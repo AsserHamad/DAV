@@ -8,7 +8,7 @@ Template.EventsAnnouncementsLayout.helpers({
       return Meteor.user().profile.role=='admin'
   },
   'events':function(){
-    return Events.find({}).fetch();
+    return Events.find({},{sort: {createdAt: -1}}).fetch();
   },
   'getAttendees':function(){
     return Meteor.users.findOne({_id:this.attendees});
@@ -19,6 +19,10 @@ Template.EventsAnnouncementsLayout.helpers({
     let x = Meteor.users.findOne({_id:attendee}).profile;
     return x.firstName+" "+x.lastName;
 
+  },
+  'attendee_pp': function(){
+    console.log(this.toString());
+    return Meteor.users.findOne({_id: this.toString()}).profile.pic;
   }
 });
 Template.EventsAnnouncementsLayout.events({

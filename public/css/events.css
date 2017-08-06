@@ -9,6 +9,7 @@
 
 }
 .event-content{
+	color:black;
 	padding:0%;
 	width: 30%;
     min-height: 550px;
@@ -26,6 +27,7 @@
 	width:100%;
 	/*height:150px;*/
 	border-radius: 5px 5px 0px 0px;
+	padding:5% 1%;
 }
 .event_title{
 	/*position:absolute;*/
@@ -38,7 +40,25 @@
 	/*left:20%;*/
 	color:white;
 }
+.admin_desc{
+	height:30%;
+}
+.admin_submit{
+	margin-top:8%;
+	background-color:white;
+	font-size:200%;
+	color: #0B3C5D;
+	border:1px solid #0B3C5D;
+	border-radius:5px;
+	width:40%;
+	height:10%;
+	transition-duration:0.3s;
+}
+.admin_submit:hover{
+background-color:#0B3C5D;
+color: white;
 
+}
 .Attend-style{
 	position:absolute;
 	top:85%;
@@ -79,10 +99,38 @@
 }
 
 
-
 .Date-style{
-  color:#d9b310;
+  color:#0B3C5D;
   font-size:170%;
   margin-top: 2%;
   text-decoration: bold;
+}
+
+.modal-dialog, .modal-content{
+	background-color: transparent;
+
+}
+.modal-body{
+	border-radius:20px;
+	background-color: rgba(50,140,193,1);
+	color:white;
+}
+.attendee_name{
+	color:white;
+	font-size:200%;
+	transition-duration:0.2s;
+}
+.attendee_name:hover{
+	color:white;
+	transform: translateY(-3px);
+}
+.fade2 {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.fade2.show {
+    opacity: 1;
+    transform: scale(1);
 }
