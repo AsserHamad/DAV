@@ -11,6 +11,9 @@ body{
   z-index:6;
 	font-family:Raleway;
 }
+textarea{
+	resize:none;
+}
 
 a, a:hover, a:focus, a:visited{
   text-decoration:none;

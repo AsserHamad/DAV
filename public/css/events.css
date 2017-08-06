@@ -115,6 +115,25 @@ color: white;
 	background-color: rgba(50,140,193,1);
 	color:white;
 }
+.attend_false{
+	padding-top:2%;
+	position:absolute;
+	top:85%;
+	width:90%;
+	height:10%;
+	left:5%;
+	text-decoration: bold;
+	font-size: 200%;
+	background-color:white;
+	border-radius:5px;
+	transition-duration:0.2s;
+	border:1px solid rgb(255,40,0);
+	color:rgb(255,40,0);
+}
+.attend_false:hover{
+	background-color:rgb(255,40,0);
+	color:white;
+}
 .attendee_name{
 	color:white;
 	font-size:200%;

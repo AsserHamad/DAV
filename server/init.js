@@ -65,6 +65,9 @@ Meteor.startup(() => {
     addAttendee(event){
       Events.update({_id: event._id},{$push: {attendees: Meteor.userId()}})
     },
+    removeAttendee(event){
+      Events.update({_id: event._id},{$pull: {attendees: Meteor.userId()}})
+    },
     removeWallPost(_id){
       WallPosts.remove({
         _id: _id
@@ -86,6 +89,28 @@ Meteor.startup(() => {
           })
         }
       })
+    },
+    follow(followed){
+      console.log(Meteor.users.findOne({_id: followed}).profile);
+      if(!Meteor.users.findOne({_id: followed}).profile.followers || Meteor.users.findOne({_id: followed}).profile.followers.indexOf(Meteor.userId())==-1){
+        let profile = Meteor.users.findOne({_id: followed}).profile;
+        if(!profile.followers)profile.followers=[Meteor.userId()];
+        else profile.followers.push(Meteor.userId());
+        Meteor.users.update({_id:followed},{
+          $set: {
+            profile: profile
+          }
+        });
+        profile = Meteor.users.findOne({_id: Meteor.userId}).profile;
+        if(!profile.following)profile.followers=[followed];
+        else profile.following.push(followed);
+        Meteor.users.update({_id:Meteor.userId()},{
+          $push: {
+            profile: profile
+          }
+        });
+      }
+
     }
   })
 });

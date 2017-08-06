@@ -9,8 +9,8 @@
   </div>
   <div style="padding-left:4%;padding-right:4%;" class="">
     <form class="createEvent">
-      <h2>Event Name</h2><input class="form-control" type="text" name="title">
-      <h2>Description</h2><textarea class="form-control" name="text"></textarea>
+      <h2>Event Name</h2><input class="form-control" placeholder="e.g.Chilli's Party!" type="text" name="title">
+      <h2>Description</h2><textarea class="form-control" name="text" placeholder="Write a description for this event."></textarea>
       <h2>Date</h2><input class="form-control" type="date" name="date">
 
       <button class="admin_submit" type="submit">Submit</button>
@@ -39,8 +39,8 @@
       </div>
       <div style="padding-left:4%;padding-right:4%;" class="">
         <form class="suggestEvent">
-          <h2>Event Name</h2><input class="form-control" type="text" name="title">
-          <h2>Description</h2><input class="form-control" type="text" name="text">
+          <h2>Event Name</h2><input class="form-control" type="text" name="title" placeholder="e.g.Chilli's Party!">
+          <h2>Description</h2><textarea class="form-control" type="text" name="text" placeholder="Write a description for this event."></textarea>
           <h2>Date</h2><input class="form-control" type="date" name="date">
 
           <button class="admin_submit" type="submit">Submit</button>
@@ -59,12 +59,7 @@
  </div>
   <div >
     <div class="Date-style"><b>{{date.getDay}}/{{date.getMonth}}/{{date.getFullYear}}</b></div><br>
-    <h3 class="text-center event-box-text">{{description}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. lorem</h3><br>
+    <h3 class="text-center event-box-text">{{description}}</h3><br>
    <button class="Attendees-style text-center" data-toggle="modal" href="#attendees_modal_{{_id}}">See who's going</button>
    <!-- Attendees Modal -->
    <div id="attendees_modal_{{_id}}" class="modal fade shake page" role="dialog">
@@ -89,7 +84,11 @@
     </div>
    </div>
       {{#if currentUser}}
-      <a class="attend">Attend</a><br>
+        {{#if attending}}
+          <a class="attend_false">Remove Attendance</a>
+        {{else}}
+          <a class="Attend-style attend">Attend</a><br>
+        {{/if}}
       {{else}}
       <button class="Attend-style text-center" data-toggle="modal" href="#attend_modal">Attend</button>
       {{/if}}

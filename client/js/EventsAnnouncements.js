@@ -23,6 +23,10 @@ Template.EventsAnnouncementsLayout.helpers({
   'attendee_pp': function(){
     console.log(this.toString());
     return Meteor.users.findOne({_id: this.toString()}).profile.pic;
+  },
+  'attending': function(){
+    console.log(Events.findOne({_id: this._id}).attendees.indexOf(Meteor.userId()));
+    return Events.findOne({_id: this._id}).attendees.indexOf(Meteor.userId())!=-1;
   }
 });
 Template.EventsAnnouncementsLayout.events({
@@ -68,6 +72,12 @@ Template.EventsAnnouncementsLayout.events({
       if(error)alert(error);
       else
       console.log(Events.find({}).fetch());
-    });
-  }
+    })},
+    'click .attend_false':function(){
+      event.preventDefault();
+      Meteor.call('removeAttendee',this,function(error){
+        if(error)alert(error);
+        else console.log(Events.findOne({_id:this._id}).attendees);
+      });
+    }
 })

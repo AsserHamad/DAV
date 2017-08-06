@@ -6,7 +6,7 @@
     {{> NewWallPost}}
   {{/if}}
   {{#each wallPosts}}
-  <div style="margin-bottom:2%;{{#if sameUser}}box-shadow:0px 0px 20px rgba(40,140,190,0.8){{/if}}" class="wall_post">
+  <div style="margin-bottom:2%;{{#if sameUser}}box-shadow:0px 0px 30px rgba(50, 140, 193, 1){{/if}}" class="wall_post">
     <h2 class="text-center"><b>{{title}}</b></h2><br>
     <div><em>{{text}}</em></div>
     -<a href="/profile/{{poster_id}}">{{getName poster_id}}</a> on {{posted_at.getDay}}/{{posted_at.getMonth}}/{{posted_at.getFullYear}}

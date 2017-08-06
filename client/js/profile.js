@@ -3,7 +3,11 @@ Template.profile.onCreated(function(){
   console.log(userId+" is your id");
 })
 Template.profile.events({
-  'click follow': function(){
-    console.log("You followed this guy!");
+  'click .follow': function(){
+    let followed = FlowRouter.getParam('userId');
+    Meteor.call('follow', followed,function(error){
+      if(error)console.log(error);
+      else console.log(Meteor.users.findOne({_id: followed}));
+    })
   }
 })

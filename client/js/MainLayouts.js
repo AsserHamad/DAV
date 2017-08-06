@@ -29,6 +29,7 @@ Template.profile.helpers({
     return Meteor.users.findOne({_id:FlowRouter.getParam('userId')}).profile.mobile;
   },
   'sameUser': function(){
+    if(Meteor.user())
     return (FlowRouter.getParam('userId')==Meteor.userId());
   },
   'userAdmin': function(){
