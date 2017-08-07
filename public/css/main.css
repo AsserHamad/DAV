@@ -1,5 +1,11 @@
 html{
-	background-color:#1D2731;
+	background: #282537;
+ background-image: -webkit-radial-gradient(top, circle cover, #5BAACF 0%, #00303f 80%);
+ background-image: -moz-radial-gradient(top, circle cover, #5BAACF 0%, #00303f 80%);
+ background-image: -o-radial-gradient(top, circle cover, #5BAACF 0%, #00303f 80%);
+ background-image: radial-gradient(top, circle cover, #5BAACF 0%, #00303f 80%);
+	height:100%;
+	background-attachment:fixed;
 	font-family:Raleway;
 }
 body{

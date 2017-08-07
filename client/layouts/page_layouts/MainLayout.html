@@ -14,22 +14,24 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- CSS Imports -->
-
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/home.css">
+
     <!-- JS Imports -->
-    <script type="text/javascript" src="/js/Main.js">
-    </script>
-     <link rel="stylesheet" type="text/css" href="/css/events.css">
+    <script type="text/javascript" src="/js/Main.js"></script>
+     <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+     <script src="dist/sweetalert.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+     
   </head>
   <body>
     <div class="">
-      <nav class="navbar navbar-fixed-top">
+      <nav class="navbar navbar-fixed-top text-center">
         <a class="navbar_logo col-xs-2 text-center" href="/">DAAD</a>
         <a class="navbar_elements col-xs-1" href="/events-announcements">Events</a>
         <a class="navbar_elements col-xs-1" href="/dav-wall">Wall</a>
         <a class="navbar_elements col-xs-1" href="/catalogue">Catalogue</a>
-        <div class="col-xs-5"></div>
+        <a class="navbar_elements col-xs-2" href="/contactUs">Contact Us</a>
+        <div class="col-xs-3"></div>
         <div class="profile col-xs-2">
         {{#if currentUser}}
         <div class="profile_pic">

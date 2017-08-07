@@ -1,5 +1,8 @@
 import { WallPosts } from '../../collections/wall_posts.js'
 
+
+
+
 Template.WallLayout.helpers({
   'wallPosts': function(){
     console.log(WallPosts.find({}).fetch());
@@ -10,12 +13,25 @@ Template.WallLayout.helpers({
     return Meteor.userId()==this.poster_id;
   },
   'userAdmin' : function(){
-    return Meteor.user().role=='admin';
+    console.log("Role is "+Meteor.user().profile.role);
+    if(Meteor.user())
+    return Meteor.user().profile.role=='admin';
   },
   'getName': function(id){
     console.log(id);
     let x = Meteor.users.findOne({_id:id}).profile;
     return x.firstName+" "+x.lastName;
+  },
+  'sendEmail':function(){
+    //TODO: Send email to deleted poster's
+    console.log(this);
+    Meteor.call(
+      'sendEmail',
+      'Asser <asserhamad96@gmail.com>',
+      'malza.is.best.lol@gmail.com',
+      'Hello from Meteor!',
+      'This is a test of Email.send.'
+    );
   }
 })
 Template.WallLayout.events({

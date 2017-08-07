@@ -13,7 +13,7 @@
 	padding:0%;
 	width: 30%;
     min-height: 550px;
-    background-color: white;
+    background-color: rgba(255, 255, 255,1);
     border-radius: 5px;
 	box-shadow:  10px 10px 20px rgba(0,0,0,0.6);
 	margin-left: 30px;
@@ -23,7 +23,7 @@
 
 }
 .cover_img{
-	background: linear-gradient(to top, #1D2731 0%, #d9b310 100%);
+background-image: linear-gradient(45deg, rgba(194, 233, 221, 0.5) 1%, rgba(104, 119, 132, 0.5) 100%), linear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);
 	width:100%;
 	/*height:150px;*/
 	border-radius: 5px 5px 0px 0px;
@@ -36,9 +36,9 @@
 	text-align:center;
 	width:100%;
 	font-family:Raleway;
-	text-shadow: 0px 0px 2px white;
+	text-shadow: 0px 0px 2px #00303f;
 	/*left:20%;*/
-	color:white;
+	color:#00303f;
 }
 .admin_desc{
 	height:30%;

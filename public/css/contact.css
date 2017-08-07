@@ -1,0 +1,20 @@
+.contact_div{
+  margin-top:8%;
+}
+.contact_info{
+  border-radius:4px;
+  background: rgba(0,0,0,0.4);
+  color:white;
+  padding:1.5% 2% 7.5% 2%;
+  margin-bottom: 4%;
+}
+#map{
+  height:350px;
+  border-radius:4px;
+}
+.horizontal_line {
+  display: block;
+  height: 2px;
+  margin-top:35%;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(white), to(rgba(0,0,0,0)));
+}

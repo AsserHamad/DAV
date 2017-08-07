@@ -7,6 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+	filter: hue-rotate(20deg);
 }
 .home_img_2{
 	background-image:url("/assets/img/berlin.jpg");

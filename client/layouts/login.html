@@ -1,8 +1,60 @@
 <template name="login">
-    <h2>Login</h2>
-    <form class="login">
-        <p>Email: <input type="email" name="email" value="admin@admin.com"></p>
-        <p>Password: <input type="password" name="password" value="admin"></p>
-        <p><input type="submit" value="Login"></p>
+  <style>
+    .form_input{
+      padding-top:1%;
+      padding-bottom:1%;
+      padding-left:1%;
+      width:80%;
+      font-size:200%;
+      background-color:rgba(0,0,0,0.5);
+      border-radius:2px;
+      border:none;
+      transition-duration:0.4s;
+      font-family:Raleway;
+      padding-left:5%;
+      box-shadow:none;
+    }
+    .form_input:focus{
+      box-shadow: 0px 0px 10px rgb(50, 140, 193);
+      outline:none;
+      float:center;
+    }
+    .form_input::placeholder{
+      transition-duration:0.3s;
+      font-size:140%;
+      color:rgba(255,255,255,0.1);
+      position:relative;
+      left:44%;
+      font-family: FontAwesome, Raleway;
+    }
+    .form_input:focus::-webkit-input-placeholder {
+    left:-5%;
+    }
+    .login_button{
+      width:80%;
+      border-radius: 2px;
+      color:white;
+      border:2px solid white;
+      background-color:transparent;
+      transition-duration:0.3s;
+      margin-top:3%;
+      padding:1% 5%;
+      font-size:200%;
+    }
+    .login_button:hover{
+      color:black;
+      background-color:white;
+    }
+  </style>
+  <div class="container center-block">
+
+    <p class="text-center" style="margin-top:9%;font-size:400%;"><b>Login</b></p>
+    <form class="login center-block">
+        <p style="font-size:200%;margin-top:2%;margin-left:10%">EMAIL ADDRESS</p>
+         <input type="email" placeholder="&#xf0e0;" class="center-block form_input" name="email" value="" required>
+        <p style="font-size:200%;margin-top:2%;margin-left:10%">PASSWORD</p>
+         <input type="password" placeholder="&#xf023;" class="center-block form_input" name="password" value="" required>
+        <button class="center-block login_button text-center" type="submit" value="Login">LOG IN</button>
     </form>
+  </div>
 </template>

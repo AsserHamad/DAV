@@ -11,11 +11,14 @@
     <div><em>{{text}}</em></div>
     -<a href="/profile/{{poster_id}}">{{getName poster_id}}</a> on {{posted_at.getDay}}/{{posted_at.getMonth}}/{{posted_at.getFullYear}}
     <br><br>
+    {{#if userAdmin}}
+      <button class="delete">Delete Post</button>
+      {{sendEmail}}
+      
+      {{else}}
     {{#if sameUser}}
       <button class="delete">Delete Post</button>
     {{/if}}
-    {{#if userAdmin}}
-      <button class="delete">Delete Post</button>
     {{/if}}
   </div>
   {{/each}}

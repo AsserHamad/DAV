@@ -17,6 +17,9 @@ import {
   CatalogueImages,
   CatalogueInfo
 } from '../collections/catalogue-images.js'
+import {
+  Feedback
+} from '../collections/feedback.js'
 
 
 Meteor.startup(() => {
@@ -40,7 +43,28 @@ Meteor.startup(() => {
     })
   };
 
+
+process.env.MAIL_URL = "smtps://postmaster%40dav.daad.com.mailgun.org:debf62835bf7866b777e2ea1eca183cd@smtp.mailgun.org:587";
+
   Meteor.methods({
+    registerUser(email,password,firstName,lastName){
+      Accounts.createUser({
+        email:email,
+        password:password,
+        profile: {
+          firstName: firstName,
+          lastName: lastName,
+          role: 'user',
+          mailingAddress: email,
+          joinedAt: new Date()
+        }
+      },function(error){
+        if(error)alert(error);
+        else {
+          FlowRouter.go('/');
+        }
+      });
+    },
     addWallPost(title, text, createdBy) {
       WallPosts.insert({
         title: title,
@@ -155,6 +179,17 @@ Meteor.startup(() => {
         });
       }
 
+    },
+    feedback(values){
+      Feedback.insert(values);
+    },
+    sendEmail(to, from, subject, text) {
+      // Make sure that all arguments are strings.
+      check([to, from, subject, text], [String]);
+      // Let other method calls from the same client start running, without
+      // waiting for the email sending to complete.
+      this.unblock();
+      Email.send({ to, from, subject, text });
     }
   })
 });

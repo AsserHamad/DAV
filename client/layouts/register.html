@@ -1,10 +1,70 @@
 <template name="register">
-    <h2>Register</h2>
-    <form class="register">
-        <p>First Name: <input type="text" name="fname"></p>
-        <p>Last Name: <input type="text" name="lname"></p>
-        <p>Email: <input type="email" name="email"></p>
-        <p>Password: <input type="password" name="password"></p>
-        <p><input type="submit" value="Register"></p>
-    </form>
+<style>
+  .form_input{
+    padding-top:1%;
+    padding-bottom:1%;
+    padding-left:1%;
+    width:100%;
+    font-size:200%;
+    background-color:rgba(0,0,0,0.5);
+    border-radius:2px;
+    border:none;
+    transition-duration:0.4s;
+    font-family:Raleway;
+    box-shadow:none;
+  }
+  .form_input:focus{
+    box-shadow: 0px 0px 10px rgb(50, 140, 193);
+    outline:none;
+  }
+  .form_input::placeholder{
+    transition-duration:0.3s;
+    font-size:80%;
+    color:rgba(255,255,255,0.1);
+    font-family: FontAwesome, Raleway;
+  }
+  .login_button{
+    width:100%;
+    border-radius: 2px;
+    color:white;
+    border:2px solid white;
+    background-color:transparent;
+    transition-duration:0.3s;
+    margin-top:32%;
+    padding:1% 5%;
+    font-size:200%;
+  }
+  .login_button:hover{
+    color:black;
+    background-color:white;
+  }
+  .info{
+    font-size:130%;
+
+  }
+</style>
+<div class="container center-block">
+  <p class="text-center" style="margin-top:9%;font-size:400%;"><b>CREATE AN ACCOUNT</b></p>
+  <form class="login center-block">
+    <div class="col-xs-8">
+      <p style="font-size:200%;margin-top:2%;margin-left:0%">EMAIL ADDRESS</p>
+      <input type="email" placeholder="e.g. john_doe@johndoe.com" class="center-block form_input" name="lname" value="" required>
+      <p style="font-size:200%;margin-top:2%;margin-left:0%">PASSWORD</p>
+      <input type="password" placeholder="" class="center-block form_input" name="password" value="" required>
+      <div class="col-xs-6 right-block">
+        <p style="font-size:200%;margin-top:2%;margin-left:0%">FIRST NAME</p>
+        <input type="text" placeholder="e.g John" class="center-block form_input" name="fname" value="" required>
+      </div>
+      <div class="col-xs-6">
+        <p style="font-size:200%;margin-top:2%;margin-left:0%">LAST NAME</p>
+        <input type="text" placeholder="e.g. Doe" class="center-block form_input" name="lname" value="" required>
+        <!-- <div class="g-recaptcha" data-sitekey="6LezFywUAAAAAAA2klYL4Ie7B0sCOOAcVMm0rTCM"></div> -->
+      </div>
+    </div>
+    <div class="col-xs-4 info">
+      <p class="text-center" style="margin-top:30%;font-size:120%;">Register for an account which will be accessible after an admin reviews and verifies your membership.<br> Thank you for using dav.eg!</p>
+    </div>
+  </form>
+  <button class="center-block login_button" type="submit" value="Register">SIGN UP</button>
+</div>
 </template>

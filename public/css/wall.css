@@ -14,7 +14,7 @@
   height:200px;
   font-size:200%;
   border-radius:5px;
-  border:2px solid white;
+  /*border:2px solid white;*/
   background-color: rgba(0,0,0,0.6);
   transition-duration: 0.2s;
 }
@@ -24,7 +24,7 @@
 .wall_post{
   margin:0% 3% 0% 3%;
   padding:1% 4%;
-  border:1px solid white;
+  /*border:1px solid white;*/
   border-radius:8px;
   background-color:rgba(0,0,0,0.3);
   color:white;
