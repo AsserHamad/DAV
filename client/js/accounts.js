@@ -22,10 +22,15 @@ Template.login.events({
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();
         Meteor.loginWithPassword(email, password, function(error){
-          if(error)alert(error.reason);
+          if(error){
+
+            swal(error.reason,"", "error");
+          }
           else {
-            swal("Good job!", "You clicked the button!", "success")
-            // FlowRouter.go('/');
+            swal({title: "Login Succesful!", confirmButtonText:"Take me home", type: "success"},function(){
+              // console.log("Hey son!");
+              FlowRouter.go('/');
+            })
           }
         });
     }
