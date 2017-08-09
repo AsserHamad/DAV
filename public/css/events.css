@@ -153,3 +153,10 @@ color: white;
     opacity: 1;
     transform: scale(1);
 }
+.delete{
+	position:absolute;
+	font-size:140%;
+	margin-top:14%;
+	left:36%;
+	color:red;
+}

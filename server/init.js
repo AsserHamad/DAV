@@ -47,24 +47,6 @@ Meteor.startup(() => {
 process.env.MAIL_URL = "smtps://postmaster%40dav.daad.com.mailgun.org:debf62835bf7866b777e2ea1eca183cd@smtp.mailgun.org:587";
 
   Meteor.methods({
-    registerUser(email,password,firstName,lastName){
-      Accounts.createUser({
-        email:email,
-        password:password,
-        profile: {
-          firstName: firstName,
-          lastName: lastName,
-          role: 'user',
-          mailingAddress: email,
-          joinedAt: new Date()
-        }
-      },function(error){
-        if(error)alert(error);
-        else {
-          FlowRouter.go('/');
-        }
-      });
-    },
     addWallPost(title, text, createdBy) {
       WallPosts.insert({
         title: title,

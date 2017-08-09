@@ -25,11 +25,13 @@
     <div class="">
       <nav class="navbar navbar-fixed-top text-center">
         <a class="navbar_logo col-xs-2 text-center" href="/">DAAD</a>
-        <a class="navbar_elements col-xs-1" href="/events-announcements">Events</a>
+        <div class="col-xs-2"></div>
+        <a class="navbar_elements col-xs-1" href="/events-announcements" >Events</a>
         <a class="navbar_elements col-xs-1" href="/dav-wall">Wall</a>
         <a class="navbar_elements col-xs-1" href="/catalogue">Catalogue</a>
         <a class="navbar_elements col-xs-2" href="/contactUs">Contact Us</a>
-        <div class="col-xs-3"></div>
+        <div class="col-xs-1">
+        </div>
         <div class="profile col-xs-2">
         {{#if currentUser}}
         <div class="profile_pic">
@@ -39,15 +41,16 @@
           {{else}}
             <img class="profile_img center-block" src="/assets/img/placeholder.png" alt="Placeholder profile pic">
           {{/if}}
-          <p>{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</p>
+          <p style="color:white;text-shadow:0px 0px 10px black;font-size:80%;">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</p>
           </a>
           <a href="#" class="text-center center-block logout">Logout</a>
         </div>
         {{else}}
-          <b><a class="col-xs-6" href="/register" style="color:#1D2731">Register</a>
-          <a class="col-xs-6" href="/login" style="color:#1D2731">Login</a></b>
+          <b><a class="col-xs-6" href="/register" style="color:white;text-shadow:0px 0px 10px black; margin-top:1.9rem;">Register</a>
+          <a class="col-xs-6" href="/login" style="color:white;text-shadow:0px 0px 10px black; margin-top:1.9rem;">Login</a></b>
         {{/if}}
       </div>
+      <br><span class="horizontal_line1"></span>
     </nav>
       {{> Template.dynamic template=main}}
   </div>

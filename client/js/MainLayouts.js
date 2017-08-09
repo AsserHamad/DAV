@@ -3,7 +3,6 @@ import { ProfilePics } from '../../collections/profilepics.js'
 Template.MainLayout.onCreated(function () {
   document.title = "DAAD Whatever";
   this.currentUpload = new ReactiveVar(false);
-  this.current_location = new ReactiveVar('/');
 });
 
 Template.profile.helpers({
@@ -63,7 +62,9 @@ Template.MainLayout.events({
       var pic;
 
       //Uploading Profile Pic
-      if(event.target.fileInput.file){
+      console.log("Fileinput is ");
+      console.log(event.target.fileInput.files);
+      if(event.target.fileInput.files && event.target.fileInput.files[0]){
         const upload = ProfilePics.insert({
           file: event.target.fileInput.files[0],
           streams: 'dynamic',

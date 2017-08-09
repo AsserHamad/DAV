@@ -1,0 +1,16 @@
+.title{
+  font-size:400%;
+  margin-top:10%;
+  text-shadow:0px 0px 5px white;
+}
+.subtitle{
+  margin-top:0%;
+  font-size:120%;
+
+}
+.upload{
+  padding:2% 3%;
+  border-radius:3px;
+  background-color:rgba(0,0,0,0.2);
+  box-shadow:4px 4px 5px black;
+}

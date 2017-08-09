@@ -4,9 +4,10 @@
     <span id="progress">{{progress.get}}%</span>
   {{else}}
   <form class="uploadPic">
-    Title: <input class="form-control" type="text" name="title">
-    <input id="fileInput" type="file" name="fileInput" />
-    <button type="submit" class="btn btn-info" name="button">Submit</button>
+    <p class="text-center" style="font-size:200%;"><b>Upload a pic!</b></p>
+    <input id="fileInput" class="text-center text-center" type="file" style="margin-bottom:4%;" name="fileInput" required/>
+    Description: <textarea class="form-control" type="text" name="title" required></textarea>
+    <button type="submit" class="btn btn-info center-block" style="margin-top:4%;" name="button">Submit</button>
   </form>
   {{/with}}
 </template>

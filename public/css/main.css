@@ -26,9 +26,16 @@ a, a:hover, a:focus, a:visited{
   cursor:pointer;
 }
 .navbar{
+	
   font-family: Lato;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  /*border-bottom: 3px solid -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#328CC1), to(rgba(29,39,49,0.7)));*/
   transition-duration:0.3s;
+}
+.horizontal_line1 {
+  display: block;
+  height: 2px;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(white), to(transparent));
+	margin-top: 5%;
 }
 .navbar a{
   /*padding:2% 0%;*/
@@ -39,10 +46,11 @@ a, a:hover, a:focus, a:visited{
     /*text-shadow: 0px 0px 5px white;*/
   }
 .navbar_elements{
-	padding-top:1.5rem;
+	padding-top:2.4rem;
 	font-size:180%;
 	color:white;
-	text-shadow:0px 0px 10px rgba(0,0,0,0.6)
+	text-shadow:0px 0px 10px rgba(0,0,0,1)
+
 }
 .navbar_logo{
   padding: 0% 0%;
@@ -60,12 +68,14 @@ a, a:hover, a:focus, a:visited{
 
 }
 .profile{
-	margin-top:1%;
+	margin-top:0.5%;
 	font-size:160%;
 }
 .logout{
 	font-size:70%;
-	margin-top:-20%;
+	margin-top:-5%;
+	color:white;
+	text-shadow:0px 0px 10px black;
 }
 .profile_img{
 	width:4rem;

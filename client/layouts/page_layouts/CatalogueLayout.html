@@ -1,7 +1,13 @@
 <template name="CatalogueLayout">
-  <h1>Catalogue</h1>
-  <h2>Upload a photo to the catalogue!</h2>
-  {{> uploadForm}}
+  <link rel="stylesheet" href="/css/catalogue.css">
+  <div class="container">
+  <p class="title text-center"><b>Catalogue</b></p>
+  <p class="subtitle text-center"><em>Upload your lorum ipsum stuff</em></p>
+  {{#if currentUser}}
+  <div class="col-xs-4 upload center-block">
+    {{> uploadForm}}
+  </div>
+  {{/if}}
   {{#each showPics}}
     <div class="text-center center-block col-xs-4">
       <p><h2>{{info.title}}</h2></p>
@@ -9,4 +15,5 @@
       <a class="remove">Remove this pic</a>
     </div>
   {{/each}}
+</div>
 </template>
