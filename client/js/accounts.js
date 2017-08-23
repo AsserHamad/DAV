@@ -32,11 +32,11 @@ Template.register.events({
 Template.login.events({
     'submit form': function(event){
         event.preventDefault();
-        var email = $('[name=email]').val();
-        var password = $('[name=password]').val();
+        console.log(event);
+        var email = event.target.email.value;
+        var password = event.target.password.value;
         Meteor.loginWithPassword(email, password, function(error){
           if(error){
-
             swal(error.reason,"", "error");
           }
           else {
